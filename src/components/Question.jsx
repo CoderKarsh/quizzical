@@ -17,10 +17,10 @@ export default function Questions({ question, corrAns, incorrAns, quesNo }) {
             key={option}
             type="radio"
             name={`question${quesNo}`}
-            id={`option${index}`}
+            id={`q${quesNo}o${index}`}
             value={option}
           />
-          <label htmlFor={`option${index}`}>{decode(option)}</label>
+          <label htmlFor={`q${quesNo}o${index}`}>{decode(option)}</label>
         </>
       ))}
       <hr />
