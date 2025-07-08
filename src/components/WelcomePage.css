@@ -11,7 +11,7 @@ p.game-description {
   margin-bottom: 2rem;
 }
 
-button.start-game-btn {
+button {
   margin: 0 auto;
   display: block;
   color: white;
@@ -23,18 +23,6 @@ button.start-game-btn {
   transition: 0.1s;
 }
 
-button.start-game-btn:hover {
+button:hover {
   background-color: var(--color-primary-700);
-}
-
-.blue-blob {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.yellow-blob {
-  position: absolute;
-  top: 0;
-  right: 0;
 }

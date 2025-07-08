@@ -1,5 +1,3 @@
-import blueBlob from "../assets/blueBlob.webp";
-import yellowBlob from "../assets/yellowBlob.webp";
 import "./WelcomePage.css";
 
 export default function WelcomePage({ handleClick }) {
@@ -13,8 +11,7 @@ export default function WelcomePage({ handleClick }) {
         Start quiz
       </button>
 
-      <img src={blueBlob} alt="" className="blue-blob" />
-      <img src={yellowBlob} alt="" className="yellow-blob" />
+      
     </>
   );
 }
