@@ -1,1 +1,67 @@
+:root {
+  /* Color Variables */
+  --color-primary-100: #f5f7fb;
+  --color-primary-200: #d6dbf5;
+  --color-primary-400: #4d5b9e;
+  --color-primary-700: #293264;
+  --color-accent-400: #fffad1;
+  --color-green-400: #94d7a2;
+  --color-red-400: #f8bcbc;
 
+  /* Derived Color Variables */
+  --text-color: var(--color-primary-700);
+  --bg-color: var(--color-primary-100);
+
+  /* Font Related Variables */
+  /* Family */
+  --ff-heading: Karla, sans-serif;
+  --ff-subheading: Karla, sans-serif;
+  --ff-text: Inter, sans-serif;
+
+  /* Sizes */
+  --fs-chip-text: 0.625rem;
+  --fs-text: 1rem;
+  --fs-heading: 2rem;
+
+  /* Weights */
+  --fw-heading: 700;
+  --fw-subheading: 500;
+  --fw-button: 500;
+  --fw-chip: 500;
+  --fw-text: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-text);
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: var(--ff-heading);
+}
+
+h2 {
+  font-family: var(--ff-subheading);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}

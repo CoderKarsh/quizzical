@@ -1,0 +1,5 @@
+main {
+  /* background-color: aquamarine; */
+  width: clamp(150px, 90%, 1024px);
+  height: 100px;
+}

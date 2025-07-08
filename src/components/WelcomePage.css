@@ -1,0 +1,40 @@
+h1.display-heading {
+  text-align: center;
+  font-size: var(--fs-heading);
+  margin-bottom: 0.5rem;
+}
+
+p.game-description {
+  font-size: var(--fs-text);
+  font-weight: var(--fw-text);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+button.start-game-btn {
+  margin: 0 auto;
+  display: block;
+  color: white;
+  font-size: var(--fs-button-text);
+  font-weight: var(--fw-button);
+  background-color: var(--color-primary-400);
+  border-radius: 1rem;
+  padding: 1em 2em;
+  transition: 0.1s;
+}
+
+button.start-game-btn:hover {
+  background-color: var(--color-primary-700);
+}
+
+.blue-blob {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.yellow-blob {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
