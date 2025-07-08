@@ -8,19 +8,20 @@
 
 import Question from "./Question";
 
-export default function QuizPage() {
+export default function QuizPage({ data }) {
   function handleSubmit() {}
 
   return (
     <form action={handleSubmit}>
-      {/* {data.map((question) => (
-        <p>{decode(question.question)}</p>
-      ))} */}
-      <Question />
-      <Question />
-      <Question />
-      <Question />
-      <Question />
+      {data.map((questionObj, index) => (
+        <Question
+          key={questionObj.question}
+          quesNo={ index }
+          question={questionObj.question}
+          corrAns={questionObj.correct_answer}
+          incorrAns={questionObj.incorrect_answers}
+        />
+      ))}
       <button type="submit">Check answers</button>
     </form>
   );

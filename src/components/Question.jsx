@@ -1,23 +1,28 @@
-// import { decode } from "html-entities";
+import { useRef } from "react";
+import { decode } from "html-entities";
 import "./Question.css";
 
-export default function Questions() {
+export default function Questions({ question, corrAns, incorrAns, quesNo }) {
+  const allOptions = useRef(
+    [...incorrAns, corrAns].sort(() => 0.5 - Math.random())
+  );
+  console.log(typeof allOptions);
   return (
     <>
-      <h2 className="question">Which colour is your favourite?</h2>
+      <h2 className="question">{decode(question)}</h2>
 
-      <input type="radio" name="ques1" id="option1" value="red" />
-      <label htmlFor="option1">Red</label>
-
-      <input type="radio" name="ques1" id="option2" value="green" />
-      <label htmlFor="option2">Green</label>
-
-      <input type="radio" name="ques1" id="option3" value="blue" />
-      <label htmlFor="option3">Blue</label>
-
-      <input type="radio" name="ques1" id="option4" value="yellow" />
-      <label htmlFor="option4">Yellow</label>
-
+      {allOptions.current.map((option, index) => (
+        <>
+          <input
+            key={option}
+            type="radio"
+            name={`question${quesNo}`}
+            id={`option${index}`}
+            value={option}
+          />
+          <label htmlFor={`option${index}`}>{decode(option)}</label>
+        </>
+      ))}
       <hr />
     </>
   );
