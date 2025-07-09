@@ -1,0 +1,11 @@
+.bottom-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.bottom-section span {
+  font-size: var(--fs-text);
+  font-weight: var(--fw-subheadig);
+}

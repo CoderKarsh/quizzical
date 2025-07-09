@@ -5,24 +5,44 @@
   b. 
 
 */
-
+import { useState, useRef } from "react";
+import { nanoid } from "nanoid";
 import Question from "./Question";
+import "./QuizPage.css";
 
 export default function QuizPage({ data }) {
-  function handleSubmit() {}
+  let score = useRef(0);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  function checkAnswers(formData) {
+    const correctAnswers = data.map((item) => item.correct_answer);
+    console.log(correctAnswers);
+    let i = 0;
+    for (const answer of formData.values()) {
+      answer === correctAnswers[i] && score.current++;
+      i++;
+    }
+    console.log(score);
+    setFormSubmitted(true);
+  }
 
   return (
-    <form action={handleSubmit}>
+    <form action={checkAnswers}>
       {data.map((questionObj, index) => (
         <Question
-          key={questionObj.question}
-          quesNo={ index }
+          key={nanoid()}
+          quesNo={index}
+          formSubmitted={formSubmitted}
           question={questionObj.question}
           corrAns={questionObj.correct_answer}
           incorrAns={questionObj.incorrect_answers}
         />
       ))}
-      <button type="submit">Check answers</button>
+      <section className="bottom-section">
+        {formSubmitted && <span>You scored {score.current} / 5 answers</span>}
+        <button type="submit">
+          {formSubmitted ? "Play again" : "Check answers"}
+        </button>
+      </section>
     </form>
   );
 }

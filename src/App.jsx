@@ -19,7 +19,7 @@ function App() {
     setGameStarted(true);
   }
 
-  console.log(questionsData);
+  // console.log(questionsData);
   return (
     <main>
       {gameStarted ? (

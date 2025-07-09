@@ -12,8 +12,6 @@ p.game-description {
 }
 
 button {
-  margin: 0 auto;
-  display: block;
   color: white;
   font-size: var(--fs-button-text);
   font-weight: var(--fw-button);
@@ -21,6 +19,11 @@ button {
   border-radius: 1rem;
   padding: 1em 2em;
   transition: 0.1s;
+}
+
+button.start-game-btn {
+  display: block;
+  margin: 0 auto;
 }
 
 button:hover {
