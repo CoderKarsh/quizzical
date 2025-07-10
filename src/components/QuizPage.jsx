@@ -6,40 +6,44 @@
 
 */
 import { useState, useRef } from "react";
-import { nanoid } from "nanoid";
 import Question from "./Question";
 import "./QuizPage.css";
 
-export default function QuizPage({ data }) {
+export default function QuizPage({ data, setGameStarted }) {
   let score = useRef(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  function checkAnswers(formData) {
-    const correctAnswers = data.map((item) => item.correct_answer);
-    console.log(correctAnswers);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
     let i = 0;
-    for (const answer of formData.values()) {
-      answer === correctAnswers[i] && score.current++;
+    for (const chosenValue of formData.values()) {
+      chosenValue === data[i].correct_ans && score.current++;
       i++;
     }
-    console.log(score);
     setFormSubmitted(true);
   }
 
   return (
-    <form action={checkAnswers}>
-      {data.map((questionObj, index) => (
+    <form onSubmit={handleSubmit}>
+      {data.map((questionObj) => (
         <Question
-          key={nanoid()}
-          quesNo={index}
-          formSubmitted={formSubmitted}
-          question={questionObj.question}
-          corrAns={questionObj.correct_answer}
-          incorrAns={questionObj.incorrect_answers}
+          key={questionObj.question}
+          isFormSubmitted={formSubmitted}
+          data={questionObj}
         />
       ))}
       <section className="bottom-section">
-        {formSubmitted && <span>You scored {score.current} / 5 answers</span>}
-        <button type="submit">
+        {formSubmitted && (
+          <span style={{ fontWeight: "bold", fontSize: "1.25rem" }}>
+            You scored {score.current} / 5 answers
+          </span>
+        )}
+        <button
+          onClick={() => {
+            formSubmitted ? setGameStarted(false) : undefined;
+          }}
+        >
           {formSubmitted ? "Play again" : "Check answers"}
         </button>
       </section>

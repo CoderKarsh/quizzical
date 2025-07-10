@@ -3,6 +3,7 @@ import WelcomePage from "./components/WelcomePage";
 import QuizPage from "./components/QuizPage";
 import blueBlob from "./assets/blueBlob.webp";
 import yellowBlob from "./assets/yellowBlob.webp";
+import questions from "./questions";
 import "./App.css";
 
 function App() {
@@ -12,18 +13,17 @@ function App() {
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple")
       .then((res) => res.json())
-      .then((data) => setQuestionsData(data.results));
+      .then((data) => setQuestionsData(questions(data.results)));
   }, []);
 
   function handleStartGame() {
     setGameStarted(true);
   }
 
-  // console.log(questionsData);
   return (
     <main>
       {gameStarted ? (
-        <QuizPage data={questionsData} />
+        <QuizPage data={questionsData} setGameStarted={setGameStarted} />
       ) : (
         <WelcomePage handleClick={handleStartGame} />
       )}

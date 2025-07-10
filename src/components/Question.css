@@ -32,3 +32,15 @@ input[type="radio"]:checked + label {
   background-color: #d6dbf5;
   border-radius: 0.5rem;
 }
+
+input[type="radio"]:checked + label.reveal {
+  background-color: red;
+  color: #293264;
+  outline: none;
+}
+
+label.reveal.correct-label {
+  background-color: var(--color-green-400);
+  color: #293264;
+  outline: none;
+}
