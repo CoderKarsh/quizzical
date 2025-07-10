@@ -65,3 +65,19 @@ button {
   cursor: pointer;
   border: none;
 }
+
+@media (max-width: 768px) {
+  :root {
+    --fs-chip-text: 0.6rem;
+    --fs-text: 0.825rem;
+    --fs-heading: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --fs-chip-text: 0.5rem;
+    --fs-text: 0.75rem;
+    --fs-heading: 1rem;
+  }
+}

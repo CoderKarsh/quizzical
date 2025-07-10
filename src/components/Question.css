@@ -1,4 +1,5 @@
 h2.question {
+  font-size: var(--fs-heading);
   color: var(--text-color);
   font-weight: var(--fw-subheading);
   margin-bottom: 0.825rem;
@@ -22,6 +23,7 @@ input[type="radio"] {
 
 input[type="radio"] + label {
   padding: 0.25rem 1rem;
+  font-size: var(--fs-text);
   outline: 0.8px solid #4d5b9e;
   border-radius: 0.5rem;
 }
@@ -43,4 +45,12 @@ label.reveal.correct-label {
   background-color: var(--color-green-400);
   color: #293264;
   outline: none;
+}
+
+
+
+@media (max-width: 480px) {
+  .options {
+    gap: 0.5rem;
+  }
 }
