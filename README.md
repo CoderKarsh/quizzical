@@ -2,8 +2,7 @@
 
 A trivia game with questions pulled from OTDB API.
 
-<img src='./image.png' width='280px' />
-<img src='./image-1.png' width='280px'  />
+<img src='./image.png' width='280px' /> <img src='./image-1.png' width='280px'  />
 
 ## Learnings:
 
