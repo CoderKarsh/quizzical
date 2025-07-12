@@ -11,7 +11,9 @@ function App() {
   const [questionsData, setQuestionsData] = useState([]);
 
   useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple")
+    fetch(
+      "https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=multiple"
+    )
       .then((res) => res.json())
       .then((data) => setQuestionsData(questions(data.results)));
   }, [gameStarted]);
